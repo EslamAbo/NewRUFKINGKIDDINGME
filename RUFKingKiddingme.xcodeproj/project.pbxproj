@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		109D96E3E2814C96FB36F97A /* Pods_RUFKingKiddingme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 714BA3F56E51569AD612FCF6 /* Pods_RUFKingKiddingme.framework */; };
+		71AB0E351C1151BD009AD522 /* CoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB0E341C1151BD009AD522 /* CoolClass.swift */; settings = {ASSET_TAGS = (); }; };
+		71CA5AFA1C1B6D64004BABB2 /* calicon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71CA5AF91C1B6D64004BABB2 /* calicon.jpg */; settings = {ASSET_TAGS = (); }; };
+		71E79C291C108D12004D3B21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E79C281C108D12004D3B21 /* AppDelegate.swift */; };
+		71E79C2B1C108D12004D3B21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E79C2A1C108D12004D3B21 /* ViewController.swift */; };
+		71E79C2E1C108D12004D3B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E79C2C1C108D12004D3B21 /* Main.storyboard */; };
+		71E79C301C108D12004D3B21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71E79C2F1C108D12004D3B21 /* Assets.xcassets */; };
+		71E79C331C108D12004D3B21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E79C311C108D12004D3B21 /* LaunchScreen.storyboard */; };
+		71E79C4C1C108EFB004D3B21 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E79C4B1C108EFB004D3B21 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		71EFFB8A1C1818CE006E2AA5 /* Save in Resources */ = {isa = PBXBuildFile; fileRef = 71EFFB891C1818CE006E2AA5 /* Save */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		71E79C411C108E8D004D3B21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71E79C3A1C108E8C004D3B21 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		71E79C431C108E8D004D3B21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71E79C3A1C108E8C004D3B21 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
+			remoteInfo = "Alamofire OSX";
+		};
+		71E79C451C108E8D004D3B21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71E79C3A1C108E8C004D3B21 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS";
+		};
+		71E79C471C108E8D004D3B21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71E79C3A1C108E8C004D3B21 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4202FE01B667AA100C997FB;
+			remoteInfo = "Alamofire watchOS";
+		};
+		71E79C491C108E99004D3B21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71E79C3A1C108E8C004D3B21 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		714BA3F56E51569AD612FCF6 /* Pods_RUFKingKiddingme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RUFKingKiddingme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71AB0E341C1151BD009AD522 /* CoolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolClass.swift; sourceTree = "<group>"; };
+		71CA5AF91C1B6D64004BABB2 /* calicon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = calicon.jpg; sourceTree = "<group>"; };
+		71E79C251C108D12004D3B21 /* RUFKingKiddingme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RUFKingKiddingme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71E79C281C108D12004D3B21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		71E79C2A1C108D12004D3B21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71E79C2D1C108D12004D3B21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		71E79C2F1C108D12004D3B21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		71E79C321C108D12004D3B21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		71E79C341C108D12004D3B21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71E79C3A1C108E8C004D3B21 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		71E79C4B1C108EFB004D3B21 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		71EFFB891C1818CE006E2AA5 /* Save */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Save; sourceTree = "<group>"; };
+		C15D1881D401E228D68DEC47 /* Pods-RUFKingKiddingme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RUFKingKiddingme.release.xcconfig"; path = "Pods/Target Support Files/Pods-RUFKingKiddingme/Pods-RUFKingKiddingme.release.xcconfig"; sourceTree = "<group>"; };
+		FB719301E8E0A96DBF6D1664 /* Pods-RUFKingKiddingme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RUFKingKiddingme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RUFKingKiddingme/Pods-RUFKingKiddingme.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71E79C221C108D12004D3B21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				109D96E3E2814C96FB36F97A /* Pods_RUFKingKiddingme.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		71E79C1C1C108D12004D3B21 = {
+			isa = PBXGroup;
+			children = (
+				71E79C3A1C108E8C004D3B21 /* Alamofire.xcodeproj */,
+				71E79C271C108D12004D3B21 /* RUFKingKiddingme */,
+				71E79C261C108D12004D3B21 /* Products */,
+				AE5901F21893D6F23B714794 /* Pods */,
+				FAA8505C7B17C5DE9D5A9C3F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		71E79C261C108D12004D3B21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71E79C251C108D12004D3B21 /* RUFKingKiddingme.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71E79C271C108D12004D3B21 /* RUFKingKiddingme */ = {
+			isa = PBXGroup;
+			children = (
+				71E79C281C108D12004D3B21 /* AppDelegate.swift */,
+				71E79C2A1C108D12004D3B21 /* ViewController.swift */,
+				71AB0E341C1151BD009AD522 /* CoolClass.swift */,
+				71EFFB891C1818CE006E2AA5 /* Save */,
+				71E79C4B1C108EFB004D3B21 /* SwiftyJSON.swift */,
+				71E79C2C1C108D12004D3B21 /* Main.storyboard */,
+				71E79C2F1C108D12004D3B21 /* Assets.xcassets */,
+				71CA5AF91C1B6D64004BABB2 /* calicon.jpg */,
+				71E79C311C108D12004D3B21 /* LaunchScreen.storyboard */,
+				71E79C341C108D12004D3B21 /* Info.plist */,
+			);
+			path = RUFKingKiddingme;
+			sourceTree = "<group>";
+		};
+		71E79C3B1C108E8C004D3B21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71E79C421C108E8D004D3B21 /* Alamofire.framework */,
+				71E79C441C108E8D004D3B21 /* Alamofire.framework */,
+				71E79C461C108E8D004D3B21 /* Alamofire.framework */,
+				71E79C481C108E8D004D3B21 /* Alamofire.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE5901F21893D6F23B714794 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB719301E8E0A96DBF6D1664 /* Pods-RUFKingKiddingme.debug.xcconfig */,
+				C15D1881D401E228D68DEC47 /* Pods-RUFKingKiddingme.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FAA8505C7B17C5DE9D5A9C3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				714BA3F56E51569AD612FCF6 /* Pods_RUFKingKiddingme.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		71E79C241C108D12004D3B21 /* RUFKingKiddingme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71E79C371C108D12004D3B21 /* Build configuration list for PBXNativeTarget "RUFKingKiddingme" */;
+			buildPhases = (
+				3AB9ACD2C6CBAE2D6A5A668F /* Check Pods Manifest.lock */,
+				71E79C211C108D12004D3B21 /* Sources */,
+				71E79C221C108D12004D3B21 /* Frameworks */,
+				71E79C231C108D12004D3B21 /* Resources */,
+				5BB6DBDE5BDA223882366944 /* Embed Pods Frameworks */,
+				871B2400D9158C4EAE50C24E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71E79C4A1C108E99004D3B21 /* PBXTargetDependency */,
+			);
+			name = RUFKingKiddingme;
+			productName = RUFKingKiddingme;
+			productReference = 71E79C251C108D12004D3B21 /* RUFKingKiddingme.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		71E79C1D1C108D12004D3B21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = killvak;
+				TargetAttributes = {
+					71E79C241C108D12004D3B21 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 71E79C201C108D12004D3B21 /* Build configuration list for PBXProject "RUFKingKiddingme" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 71E79C1C1C108D12004D3B21;
+			productRefGroup = 71E79C261C108D12004D3B21 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 71E79C3B1C108E8C004D3B21 /* Products */;
+					ProjectRef = 71E79C3A1C108E8C004D3B21 /* Alamofire.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				71E79C241C108D12004D3B21 /* RUFKingKiddingme */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		71E79C421C108E8D004D3B21 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 71E79C411C108E8D004D3B21 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		71E79C441C108E8D004D3B21 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 71E79C431C108E8D004D3B21 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		71E79C461C108E8D004D3B21 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 71E79C451C108E8D004D3B21 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		71E79C481C108E8D004D3B21 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 71E79C471C108E8D004D3B21 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		71E79C231C108D12004D3B21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71E79C331C108D12004D3B21 /* LaunchScreen.storyboard in Resources */,
+				71E79C301C108D12004D3B21 /* Assets.xcassets in Resources */,
+				71CA5AFA1C1B6D64004BABB2 /* calicon.jpg in Resources */,
+				71E79C2E1C108D12004D3B21 /* Main.storyboard in Resources */,
+				71EFFB8A1C1818CE006E2AA5 /* Save in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3AB9ACD2C6CBAE2D6A5A668F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5BB6DBDE5BDA223882366944 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RUFKingKiddingme/Pods-RUFKingKiddingme-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		871B2400D9158C4EAE50C24E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RUFKingKiddingme/Pods-RUFKingKiddingme-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71E79C211C108D12004D3B21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71E79C4C1C108EFB004D3B21 /* SwiftyJSON.swift in Sources */,
+				71AB0E351C1151BD009AD522 /* CoolClass.swift in Sources */,
+				71E79C2B1C108D12004D3B21 /* ViewController.swift in Sources */,
+				71E79C291C108D12004D3B21 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71E79C4A1C108E99004D3B21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 71E79C491C108E99004D3B21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		71E79C2C1C108D12004D3B21 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71E79C2D1C108D12004D3B21 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		71E79C311C108D12004D3B21 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				71E79C321C108D12004D3B21 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		71E79C351C108D12004D3B21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		71E79C361C108D12004D3B21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71E79C381C108D12004D3B21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB719301E8E0A96DBF6D1664 /* Pods-RUFKingKiddingme.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RUFKingKiddingme/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.killvak.RUFKingKiddingme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		71E79C391C108D12004D3B21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C15D1881D401E228D68DEC47 /* Pods-RUFKingKiddingme.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RUFKingKiddingme/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.killvak.RUFKingKiddingme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		71E79C201C108D12004D3B21 /* Build configuration list for PBXProject "RUFKingKiddingme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71E79C351C108D12004D3B21 /* Debug */,
+				71E79C361C108D12004D3B21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71E79C371C108D12004D3B21 /* Build configuration list for PBXNativeTarget "RUFKingKiddingme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71E79C381C108D12004D3B21 /* Debug */,
+				71E79C391C108D12004D3B21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 71E79C1D1C108D12004D3B21 /* Project object */;
+}

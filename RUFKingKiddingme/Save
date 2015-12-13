@@ -1,0 +1,9 @@
+
+NationalityIDResults.insert(" ", atIndex: 0)
+var NaID = NationalityIDResults.indexOf(NationalityOutLet.text!)
+NatinalityID =  String(NaID )
+print(NatinalityID)
+PreferedLanguagesResult.insert(" ", atIndex: 0)
+var LangID = PreferedLanguagesResult.indexOf(FirstnameoutLet.text!)
+PreferedLanguage = String(LangID )
+print(PreferedLanguage)
