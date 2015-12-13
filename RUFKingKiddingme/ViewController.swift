@@ -204,13 +204,15 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     @IBAction func SaveButton(sender: AnyObject) {
         
         checkForErrors()
-        let TextEditCompletion = true
+        if checkForErrors(){
+           
+            
         TestItOrLeaveIt()
         TestoItOrLeaveIt()
         GetTheValueFromtextFieldToTheIDVars()
         print(PreferedLanguage)
         print(NatinalityID)
-        
+        }
 //        if TextEditCompletion {
         
 //            switch sender.tag{
@@ -586,16 +588,18 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                 errors = true
                 message += "Nationality is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: NationalityOutLet)
-            }
-            else if (!NationalityIDResults.contains(NationalityOutLet.text!)){
-                
+            }else{ WhiteBordersForTexts(PassWordOutlet)}
+            
+            if !isupper(NationalityOutLet.text![0] as Character){
                 errors = true
-                message += "Invalid Nationality plz try again"
+                message += "The first letter has to be a uppercase , try again plz :)"
                 alertWithTitle(title, message: message, ViewController: self, toFocus: NationalityOutLet)
+            }else{WhiteBordersForTexts(NationalityOutLet)}
             
-            
-            
-            
+            if (!NationalityIDResults.contains(NationalityOutLet.text!)){
+                errors = true
+                message += "Invalid Nationality"
+                alertWithTitle(title, message: message, ViewController: self, toFocus: NationalityOutLet)
             }
             else{ WhiteBordersForTexts(NationalityOutLet)}
             
@@ -636,7 +640,24 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         TextField.layer.borderWidth = 2.0
     }
     
-    
+    func isupper(c:Character) -> Bool
+    {
+        let cs = String(c)
+        return (cs == cs.uppercaseString) && (cs != cs.lowercaseString)
+    }
 }
-
+extension String {
+    
+    subscript (i: Int) -> Character {
+        return self[self.startIndex.advancedBy(i)]
+    }
+    
+    subscript (i: Int) -> String {
+        return String(self[i] as Character)
+    }
+    
+    subscript (r: Range<Int>) -> String {
+        return substringWithRange(Range(start: startIndex.advancedBy(r.startIndex), end: startIndex.advancedBy(r.endIndex)))
+    }
+}
 

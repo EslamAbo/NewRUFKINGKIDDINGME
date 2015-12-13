@@ -252,7 +252,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="elL-bo-Myl">
                                         <rect key="frame" x="8" y="568" width="237" height="49"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtB-Nb-nG1">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtB-Nb-nG1">
                                                 <rect key="frame" x="0.0" y="0.0" width="79" height="49"/>
                                                 <animations/>
                                                 <constraints>
@@ -272,7 +272,7 @@
                                                     <action selector="MaleOrFemaleThereIsNo3rd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zer-PR-DYb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxN-Xg-55N">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxN-Xg-55N">
                                                 <rect key="frame" x="79" y="0.0" width="79" height="49"/>
                                                 <animations/>
                                                 <constraints>
@@ -294,7 +294,7 @@
                                                     <action selector="MaleOrFemaleSlider:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MhP-mB-LOC"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p07-pM-7Rg">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p07-pM-7Rg">
                                                 <rect key="frame" x="158" y="0.0" width="79" height="49"/>
                                                 <animations/>
                                                 <constraints>
@@ -323,7 +323,10 @@
                                             <constraint firstAttribute="height" constant="74" id="5XS-jR-cqD"/>
                                             <constraint firstAttribute="width" constant="224" id="yNR-oh-9gW"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="49"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="5XS-jR-cqD"/>
