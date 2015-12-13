@@ -72,16 +72,16 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     //////////////
     // the main empty Variables except the URlKey to make a default
     var RuDriverOrPassengerURLKey : String = "RegisterDriver"
-    let firstName : String = "Nezear212"
-    let LastName : String = "DEeV"
-    let MobileNum : String = "00000000000"
-    let UserName : String = "Neze@DEV.com"
-    let PassWord : String = "Arafa2015"
+    var firstName : String = "Nezear212"
+    var LastName : String = "DEeV"
+    var MobileNum : String = "00000000000"
+    var UserName : String = "Neze@DEV.com"
+    var PassWord : String = "Arafa2015"
     
     var Gender : String = "M"
-    let PhotoName : String = "NoImage.png"
-    let LicencesScaned : String = "nofile.jpg"
-    let TrafficFileNum : String = "" // empty
+    var PhotoName : String = "NoImage.png"
+    var LicencesScaned : String = "nofile.jpg"
+    var TrafficFileNum : String = "" // empty
     var BirthDate : String = "16/9/1991" // Amgad birthday xD !!
     
     var NatinalityID : String = ""  // that will equal the index of for
@@ -204,14 +204,26 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     @IBAction func SaveButton(sender: AnyObject) {
         
         checkForErrors()
-        if checkForErrors(){
-           
+        if !checkForErrors(){
             
+    
         TestItOrLeaveIt()
         TestoItOrLeaveIt()
         GetTheValueFromtextFieldToTheIDVars()
         print(PreferedLanguage)
         print(NatinalityID)
+            firstName = TheRealFirstNameText.text!
+            LastName = LastnameoutLet.text!
+            MobileNum = MobileOutLet.text!
+            UserName = userNameOutLet.text!
+            PassWord = PassWordOutlet.text!
+            BirthDate = DatePickerTextOutLet.text!
+            
+            print(firstName,LastName,MobileNum,UserName,PassWord,firstName,NatinalityID,PreferedLanguage)
+            let path =  "http://213.42.51.219/_mobfiles/CLS_MobAndroid.asmx/\(RuDriverOrPassengerURLKey)?firstName=\(firstName)&lastName=\(LastName)&mobile=\(MobileNum)&username=\(UserName)&password=\(PassWord)&gender=\(Gender)&photoName=\(PhotoName)&licenseScannedFileName=\(LicencesScaned)&TrafficFileNo=\(TrafficFileNum)&BirthDate=\(BirthDate)&NationalityId=\(NatinalityID)&PreferredLanguageId=\(PreferedLanguage)"
+            print(path)
+            
+            CoolClass().WebServiesSire(path)
         }
 //        if TextEditCompletion {
         
@@ -314,9 +326,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     ///////// web Getter
     func WebGetterArigatouGozaimasu(){
-        let path =  "http://213.42.51.219/_mobfiles/CLS_MobAndroid.asmx/\(RuDriverOrPassengerURLKey)?firstName=\(firstName)&lastName=\(LastName)&mobile=\(MobileNum)&username=\(UserName)&password=\(PassWord)&gender=\(Gender)&photoName=\(PhotoName)&licenseScannedFileName=\(LicencesScaned)&TrafficFileNo=\(TrafficFileNum)&BirthDate=\(BirthDate)&NationalityId=\(NatinalityID)&PreferredLanguageId=\(PreferedLanguage)"
-        
-        CoolClass().WebServiesSire(path)
+       
         
         let nationalityIdUrl = "http://213.42.51.219/_mobfiles/CLS_MobAndroid.asmx/GetNationalities?id=0"
         WebGetValue(nationalityIdUrl, indexx: "NationalityEnName", NatIDd: "ID", LanguageIndex: "",LanguageIDNum:"")
@@ -362,7 +372,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         DatePickerTextOutLet.inputView = datePicker
         datePicker.addTarget(self, action: "datePickerChanged:", forControlEvents: .ValueChanged)
         BirthDate = DatePickerTextOutLet.text!
-        print(BirthDate)
+//        print(BirthDate)
         
     }
     
@@ -421,8 +431,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                                 
                             }//for loop
                             
-                            print(self.NationalityIDResults)
-                            print(self.IDGEtter)
+//                            print(self.NationalityIDResults)
+//                            print(self.IDGEtter)
                             
                             //                                    )
                             //                                    let cont : AnyObject? = collection["cont"]
@@ -458,7 +468,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             dic[NationalityIDResults[i]] = IDGEtter[i]
         }
         
-        print(dic) // "[A: 1, B: 2, C: 3]
+//        print(dic) // "[A: 1, B: 2, C: 3]
         
         
     }
@@ -469,7 +479,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             languageDictioanry[PreferedLanguagesResult[i]] = LanguageIDGetter[i]
         }
         
-        print(languageDictioanry) // "[A: 1, B: 2, C: 3]
+//        print(languageDictioanry) // "[A: 1, B: 2, C: 3]
         
         
     }
@@ -480,13 +490,13 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         
 //        var LanguageIDFromText = FirstnameoutLet.text!
         let NationalityIDFromText = NationalityOutLet.text!
-        print(NationalityIDFromText)
-        print( dic[NationalityOutLet.text!])
-        NatinalityID = "\(dic[NationalityOutLet.text!])"
+//        print(NationalityIDFromText)
+//        print( dic[NationalityOutLet.text!])
+        NatinalityID = "\(dic[NationalityOutLet.text!]!)"
       let FirstIDFromText = FirstnameoutLet.text!
-        print(FirstIDFromText)
-        print(languageDictioanry[FirstnameoutLet.text!])
-        PreferedLanguage = "\(languageDictioanry[FirstnameoutLet.text!])"
+//        print(FirstIDFromText)
+//        print(languageDictioanry[FirstnameoutLet.text!])
+        PreferedLanguage = "\(languageDictioanry[FirstnameoutLet.text!]!)"
     }
     
     
@@ -590,12 +600,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                 alertWithTitle(title, message: message, ViewController: self, toFocus: NationalityOutLet)
             }else{ WhiteBordersForTexts(PassWordOutlet)}
             
-            if !isupper(NationalityOutLet.text![0] as Character){
-                errors = true
-                message += "The first letter has to be a uppercase , try again plz :)"
-                alertWithTitle(title, message: message, ViewController: self, toFocus: NationalityOutLet)
-            }else{WhiteBordersForTexts(NationalityOutLet)}
-            
             if (!NationalityIDResults.contains(NationalityOutLet.text!)){
                 errors = true
                 message += "Invalid Nationality"
@@ -640,24 +644,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         TextField.layer.borderWidth = 2.0
     }
     
-    func isupper(c:Character) -> Bool
-    {
-        let cs = String(c)
-        return (cs == cs.uppercaseString) && (cs != cs.lowercaseString)
-    }
+    
 }
-extension String {
-    
-    subscript (i: Int) -> Character {
-        return self[self.startIndex.advancedBy(i)]
-    }
-    
-    subscript (i: Int) -> String {
-        return String(self[i] as Character)
-    }
-    
-    subscript (r: Range<Int>) -> String {
-        return substringWithRange(Range(start: startIndex.advancedBy(r.startIndex), end: startIndex.advancedBy(r.endIndex)))
-    }
-}
+
 
