@@ -137,7 +137,7 @@
                                                     </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="OLa-H3-TjY"/>

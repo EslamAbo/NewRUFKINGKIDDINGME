@@ -21,7 +21,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     var NationalityIDResults = [String]()
     var PreferedLanguagesResult = [String]()
     var AWesome : NSString = ""
-    var pastUrls = ["Www.google.com","Www.bing.com","Www.mmosite.com","Www.facebook.com","Www.youtube.com"]
     
     enum SelectAbuttonFromThe3Knights : Int {
         case Passenger
@@ -33,17 +32,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         case WithOutMustache
         case WithMushtache
         case SliderBetweenTheMushtaches
-    }
-    
-    enum TheTextTags : Int {
-        case FirstNameIsIncall 
-        case LastNameIsIncall
-        case mobileNumInCall
-        case UserNameInCall
-        case PassWordInCall
-        case NationalityInCall
-        case DateOfBirthInCall
-        case LangaugeInCall
     }
     
     // the outLets
@@ -176,6 +164,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         // Do any additional setup after loading the view, typically from a nib.
         
         // The Auto Compelete Delegates
+        DatePickerTextOutLet.delegate = self
         NationalityOutLet.delegate = self
         AutoComTable!.delegate = self
         AutoComTable!.dataSource = self
@@ -187,9 +176,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         
         
         // The picker code  Delegates
-        picker.delegate = self
-        picker.dataSource = self
-        FirstnameoutLet.inputView = picker
+       PickerSensei(FirstnameoutLet)
         
         
         WebGetterArigatouGozaimasu()
@@ -198,7 +185,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
 //        print(NationalityIDResults)
 //        print(PreferedLanguagesResult)
     }
-    
     
     
     @IBAction func SaveButton(sender: AnyObject) {
@@ -344,6 +330,50 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     }
     ///////////////////////////////////Language picker
     
+    
+    func PickerSensei(textField:UITextField){
+        let picker: UIPickerView
+        picker = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 200))
+        picker.backgroundColor = .whiteColor()
+        
+        
+        picker.showsSelectionIndicator = true
+        picker.delegate = self
+        picker.dataSource = self
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 226/255, green: 0/255, blue: 0/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        //        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "CancelPicker")
+        
+        
+        toolBar.setItems([  spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        
+        
+        textField.inputView = picker
+        textField.inputAccessoryView = toolBar
+    }
+    func donePicker() {
+        PickerSensei(FirstnameoutLet)
+        if ((FirstnameoutLet.text?.characters.count) < 1 ){
+            FirstnameoutLet.text = "Arabic"
+            
+        }
+        FirstnameoutLet.resignFirstResponder()
+        
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: PreferedLanguagesResult[row], attributes: [NSForegroundColorAttributeName : UIColor.redColor()])
+        return attributedString
+    }
+    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
         return  1
         
@@ -355,10 +385,10 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         FirstnameoutLet.text = String(PreferedLanguagesResult[row])
-        FirstnameoutLet.endEditing(true)
+//        FirstnameoutLet.endEditing(true)
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(PreferedLanguagesResult[row])
+        return self.PreferedLanguagesResult[row]
     }
     
     //////////////////////// end of Langauge picker
@@ -564,37 +594,37 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             var errors = false
             let title = "Error"
             var message = ""
-            if ((TheRealFirstNameText.text?.characters.count) < 8 ) {
+            if ((TheRealFirstNameText.text?.characters.count) < 3 ) || ((TheRealFirstNameText.text?.characters.count) > 9 ) {
                 errors = true
                 message += "FirstName is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: TheRealFirstNameText)
             }else{ WhiteBordersForTexts(TheRealFirstNameText)}
             
-            if ((LastnameoutLet.text?.characters.count) < 8 ) {
+            if ((LastnameoutLet.text?.characters.count) < 3 ) || ((LastnameoutLet.text?.characters.count) > 9 ){
                 errors = true
                 message += "LastName is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: LastnameoutLet)
             }else{ WhiteBordersForTexts(LastnameoutLet)}
             
-            if ((MobileOutLet.text?.characters.count) < 8 ) {
+            if ((MobileOutLet.text?.characters.count) < 8 ) || ((MobileOutLet.text?.characters.count) > 9 ){
                 errors = true
-                message += "Mobile numper is empty :("
+                message += "Mobile numper is problem :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: MobileOutLet)
             }else{ WhiteBordersForTexts(MobileOutLet)}
             
-            if ((userNameOutLet.text?.characters.count) < 8 ) {
+            if ((userNameOutLet.text?.characters.count) < 6 ) || ((userNameOutLet.text?.characters.count) > 9 ){
                 errors = true
                 message += "UserName is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: userNameOutLet)
             }else{ WhiteBordersForTexts(userNameOutLet)}
             
-            if ((PassWordOutlet.text?.characters.count) < 8 ){
+            if ((PassWordOutlet.text?.characters.count) < 8 ) || ((PassWordOutlet.text?.characters.count) > 9 ){
                 errors = true
                 message += "Password must be at least 8 characters , sorry bro  :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: PassWordOutlet)
             }else{ WhiteBordersForTexts(PassWordOutlet)}
             
-            if ((NationalityOutLet.text?.characters.count) < 3 ) {
+            if ((NationalityOutLet.text?.characters.count) < 3 ) || ((NationalityOutLet.text?.characters.count) > 9 ) {
                 errors = true
                 message += "Nationality is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: NationalityOutLet)
@@ -607,13 +637,13 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             }
             else{ WhiteBordersForTexts(NationalityOutLet)}
             
-            if ((FirstnameoutLet.text?.characters.count) < 2 ) {
+            if ((FirstnameoutLet.text?.characters.count) < 2 ) || ((FirstnameoutLet.text?.characters.count) > 9 ){
                 errors = true
                 message += "Language is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: FirstnameoutLet)
             }else{ WhiteBordersForTexts(FirstnameoutLet)}
             
-            if ((DatePickerTextOutLet.text?.characters.count) < 5 ){
+            if ((DatePickerTextOutLet.text?.characters.count) < 5 )  {
                 errors = true
                 message += "Birthdate  is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: DatePickerTextOutLet)

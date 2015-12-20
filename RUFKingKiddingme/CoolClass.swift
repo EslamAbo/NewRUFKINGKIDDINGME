@@ -13,7 +13,7 @@ import Fuzi
 
 class CoolClass {
     
-    
+    var POP : String = ""
     var testo = [Any]()
     func WebServiesSire(WEBPage:String){
         Alamofire.request(.GET, WEBPage )
@@ -26,7 +26,10 @@ class CoolClass {
                         
                         let data = root.stringValue
                         let jsson = JSON(data)
-                        print(jsson)
+                        if data == "\"-1\"" {}
+                        
+                        
+                        
                         
                     }
                 } catch let error {
