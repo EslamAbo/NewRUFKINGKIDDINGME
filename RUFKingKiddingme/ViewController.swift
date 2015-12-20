@@ -424,11 +424,17 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         
     }
     func doneClick() {
+        print(datePicker.date.age)
+        if ((datePicker.date.age) >= 9460800 ){
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .ShortStyle
         dateFormatter.dateFormat = "dd/MM/yyyy"
         DatePickerTextOutLet.text = dateFormatter.stringFromDate(datePicker.date)
         DatePickerTextOutLet.resignFirstResponder()
+        }
+        else {
+             alertWithTitle("Go Home", message: "You are To young my Child", ViewController: self, toFocus: DatePickerTextOutLet)
+        }
     }
     
     func cancelClick() {
@@ -698,5 +704,13 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     
 }
-
+extension NSDate {
+    var age: Int {
+        let calendar: NSCalendar = NSCalendar.currentCalendar()
+        let now = calendar.startOfDayForDate(NSDate())
+        let birthdate = calendar.startOfDayForDate(self)
+        let components = calendar.components(.Minute, fromDate: birthdate, toDate: now, options: [])
+        return components.minute
+    }
+}
 
