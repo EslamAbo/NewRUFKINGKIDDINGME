@@ -61,17 +61,17 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     //////////////
     // the main empty Variables except the URlKey to make a default
     var RuDriverOrPassengerURLKey : String = "RegisterDriver"
-    var firstName : String = "Nezear212"
-    var LastName : String = "DEeV"
-    var MobileNum : String = "00000000000"
-    var UserName : String = "Neze@DEV.com"
-    var PassWord : String = "Arafa2015"
+    var firstName : String = ""
+    var LastName : String = ""
+    var MobileNum : String = ""
+    var UserName : String = ""
+    var PassWord : String = ""
     
     var Gender : String = "M"
     var PhotoName : String = "NoImage.png"
     var LicencesScaned : String = "nofile.jpg"
     var TrafficFileNum : String = "" // empty
-    var BirthDate : String = "16/9/1991" // Amgad birthday xD !!
+    var BirthDate : String = ""
     
     var NatinalityID : String = ""  // that will equal the index of for
     var PreferedLanguage : String = ""
@@ -207,6 +207,10 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             BirthDate = DatePickerTextOutLet.text!
             
             print(firstName,LastName,MobileNum,UserName,PassWord,firstName,NatinalityID,PreferedLanguage)
+            firstName = firstName.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLHostAllowedCharacterSet())!
+            LastName = LastName.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLHostAllowedCharacterSet())!
+
+
             let path =  "http://213.42.51.219/_mobfiles/CLS_MobAndroid.asmx/\(RuDriverOrPassengerURLKey)?firstName=\(firstName)&lastName=\(LastName)&mobile=\(MobileNum)&username=\(UserName)&password=\(PassWord)&gender=\(Gender)&photoName=\(PhotoName)&licenseScannedFileName=\(LicencesScaned)&TrafficFileNo=\(TrafficFileNum)&BirthDate=\(BirthDate)&NationalityId=\(NatinalityID)&PreferredLanguageId=\(PreferedLanguage)"
             print(path)
             
@@ -628,37 +632,37 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             var errors = false
             let title = "Error"
             var message = ""
-            if ((TheRealFirstNameText.text?.characters.count) < 3 ) || ((TheRealFirstNameText.text?.characters.count) > 9 ) {
+            if ((TheRealFirstNameText.text?.characters.count) < 3 ) || ((TheRealFirstNameText.text?.characters.count) > 15 ) {
                 errors = true
                 message += "FirstName is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: TheRealFirstNameText)
             }else{ WhiteBordersForTexts(TheRealFirstNameText)}
             
-            if ((LastnameoutLet.text?.characters.count) < 3 ) || ((LastnameoutLet.text?.characters.count) > 9 ){
+            if ((LastnameoutLet.text?.characters.count) < 3 ) || ((LastnameoutLet.text?.characters.count) > 15 ){
                 errors = true
                 message += "LastName is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: LastnameoutLet)
             }else{ WhiteBordersForTexts(LastnameoutLet)}
             
-            if ((MobileOutLet.text?.characters.count) < 8 ) || ((MobileOutLet.text?.characters.count) > 9 ){
+            if ((MobileOutLet.text?.characters.count) < 1 ) || ((MobileOutLet.text?.characters.count) > 9 ){
                 errors = true
                 message += "Mobile numper is problem :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: MobileOutLet)
             }else{ WhiteBordersForTexts(MobileOutLet)}
             
-            if ((userNameOutLet.text?.characters.count) < 6 ) || ((userNameOutLet.text?.characters.count) > 9 ){
+            if ((userNameOutLet.text?.characters.count) < 6 ) || ((userNameOutLet.text?.characters.count) > 19){
                 errors = true
                 message += "UserName is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: userNameOutLet)
             }else{ WhiteBordersForTexts(userNameOutLet)}
             
-            if ((PassWordOutlet.text?.characters.count) < 8 ) || ((PassWordOutlet.text?.characters.count) > 9 ){
+            if ((PassWordOutlet.text?.characters.count) < 8 ) || ((PassWordOutlet.text?.characters.count) > 15 ){
                 errors = true
                 message += "Password must be at least 8 characters , sorry bro  :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: PassWordOutlet)
             }else{ WhiteBordersForTexts(PassWordOutlet)}
             
-            if ((NationalityOutLet.text?.characters.count) < 3 ) || ((NationalityOutLet.text?.characters.count) > 9 ) {
+            if ((NationalityOutLet.text?.characters.count) < 3 ) || ((NationalityOutLet.text?.characters.count) > 14 ) {
                 errors = true
                 message += "Nationality is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: NationalityOutLet)
@@ -682,8 +686,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                 message += "Birthdate  is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: DatePickerTextOutLet)
             }else{ WhiteBordersForTexts(DatePickerTextOutLet)}
-                return errors
-            }// CheckFor Error Func
+            return errors
+    }// CheckFor Error Func
     
             func alertWithTitle(title: String!, message: String, ViewController: UIViewController, toFocus:UITextField) {
                 let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
