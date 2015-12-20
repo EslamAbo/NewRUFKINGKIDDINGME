@@ -12,7 +12,8 @@ import Fuzi
 
 
 class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate , UITextFieldDelegate, UITableViewDelegate,   UITableViewDataSource{
-    
+    let datePicker = UIDatePicker()
+
     var languageDictioanry = [String:Int]()
     var LanguageIDGetter = [Int]()
     var dic = [String:Int]()
@@ -397,22 +398,43 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     //////// Date Picker
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        let datePicker = UIDatePicker()
         datePicker.datePickerMode = UIDatePickerMode.Date
         DatePickerTextOutLet.inputView = datePicker
-        datePicker.addTarget(self, action: "datePickerChanged:", forControlEvents: .ValueChanged)
+//        datePicker.addTarget(self, action: "datePickerChanged:", forControlEvents: .ValueChanged)
         BirthDate = DatePickerTextOutLet.text!
+        
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 216/255, green: 0/255, blue: 0/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        // Adds the buttons
+        let doneButton = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: "doneClick")
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: "cancelClick")
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        
+        // Adds the toolbar to the view
+        DatePickerTextOutLet.inputView = datePicker
+        DatePickerTextOutLet.inputAccessoryView = toolBar
 //        print(BirthDate)
         
     }
-    
-    func datePickerChanged(sender:UIDatePicker){
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .ShortStyle
-        formatter.dateFormat = "dd/MM/yyyy"
-        DatePickerTextOutLet.text = formatter.stringFromDate(sender.date)
-        
+    func doneClick() {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .ShortStyle
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        DatePickerTextOutLet.text = dateFormatter.stringFromDate(datePicker.date)
+        DatePickerTextOutLet.resignFirstResponder()
     }
+    
+    func cancelClick() {
+        DatePickerTextOutLet.resignFirstResponder()
+    }
+
     ///////// Date Picker End
     func WebGetValue(url:String,indexx : String,NatIDd:String,LanguageIndex:String,LanguageIDNum : String){
         
