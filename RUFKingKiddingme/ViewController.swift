@@ -409,6 +409,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         toolBar.translucent = true
         toolBar.tintColor = UIColor(red: 216/255, green: 0/255, blue: 0/255, alpha: 1)
         toolBar.sizeToFit()
+        datePicker.setValue(UIColor.redColor(), forKeyPath: "textColor")
+        datePicker.backgroundColor = UIColor.whiteColor()
         
         // Adds the buttons
         let doneButton = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: "doneClick")
@@ -425,16 +427,20 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     }
     func doneClick() {
         print(datePicker.date.age)
-        if ((datePicker.date.age) >= 9460800 ){
+        if ((datePicker.date.age) >= 9460800 && (datePicker.date.age) <= 42048000 ){
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .ShortStyle
         dateFormatter.dateFormat = "dd/MM/yyyy"
         DatePickerTextOutLet.text = dateFormatter.stringFromDate(datePicker.date)
         DatePickerTextOutLet.resignFirstResponder()
         }
-        else {
+        else if ((datePicker.date.age) <= 9460800 ){
              alertWithTitle("Go Home", message: "You are To young my Child", ViewController: self, toFocus: DatePickerTextOutLet)
-        }
+        } //younger than 18 Years Old
+        else if ((datePicker.date.age) >= 42048000 ){
+            alertWithTitle("Sorry Sir", message: "You are to Old for This Shit", ViewController: self, toFocus: DatePickerTextOutLet)
+
+        }// older than 80 Years Old
     }
     
     func cancelClick() {
