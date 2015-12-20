@@ -181,10 +181,30 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         
         
         WebGetterArigatouGozaimasu()
+        changeTheHintColor(TheRealFirstNameText     )
         
         //        print(self.PrefferedLanguagesResult,self.NationalityIDResults)
 //        print(NationalityIDResults)
 //        print(PreferedLanguagesResult)
+    }
+    func changeTheHintColor(textField:UITextField ){
+       
+        TheRealFirstNameText.attributedPlaceholder = NSAttributedString(string:"Firstname",
+            attributes:[NSForegroundColorAttributeName: UIColor.redColor()])
+        LastnameoutLet.attributedPlaceholder = NSAttributedString(string:"lastname",
+            attributes:[NSForegroundColorAttributeName: UIColor.redColor()])
+        MobileOutLet.attributedPlaceholder = NSAttributedString(string:"Mobile number",
+            attributes:[NSForegroundColorAttributeName: UIColor.redColor()])
+        userNameOutLet.attributedPlaceholder = NSAttributedString(string:"Username(Email)",
+            attributes:[NSForegroundColorAttributeName: UIColor.redColor()])
+        PassWordOutlet.attributedPlaceholder = NSAttributedString(string:"Password",
+            attributes:[NSForegroundColorAttributeName: UIColor.redColor()])
+        NationalityOutLet.attributedPlaceholder = NSAttributedString(string:"Nationality",
+            attributes:[NSForegroundColorAttributeName: UIColor.redColor()])
+        DatePickerTextOutLet.attributedPlaceholder = NSAttributedString(string:"Date of Birth",
+            attributes:[NSForegroundColorAttributeName: UIColor.redColor()])
+        FirstnameoutLet.attributedPlaceholder = NSAttributedString(string:"Language",
+            attributes:[NSForegroundColorAttributeName: UIColor.redColor()])
     }
     
     
@@ -193,7 +213,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         checkForErrors()
         if !checkForErrors(){
             
-    
         TestItOrLeaveIt()
         TestoItOrLeaveIt()
         GetTheValueFromtextFieldToTheIDVars()
@@ -209,7 +228,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             print(firstName,LastName,MobileNum,UserName,PassWord,firstName,NatinalityID,PreferedLanguage)
             firstName = firstName.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLHostAllowedCharacterSet())!
             LastName = LastName.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLHostAllowedCharacterSet())!
-
+            UserName = UserName.lowercaseString      // didn't check it
 
             let path =  "http://213.42.51.219/_mobfiles/CLS_MobAndroid.asmx/\(RuDriverOrPassengerURLKey)?firstName=\(firstName)&lastName=\(LastName)&mobile=\(MobileNum)&username=\(UserName)&password=\(PassWord)&gender=\(Gender)&photoName=\(PhotoName)&licenseScannedFileName=\(LicencesScaned)&TrafficFileNo=\(TrafficFileNum)&BirthDate=\(BirthDate)&NationalityId=\(NatinalityID)&PreferredLanguageId=\(PreferedLanguage)"
             print(path)
@@ -401,6 +420,9 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     //////// Date Picker
     
+    @IBAction func DatePickeractionButton(sender: AnyObject) {
+        
+    }
     func textFieldDidBeginEditing(textField: UITextField) {
         datePicker.datePickerMode = UIDatePickerMode.Date
         DatePickerTextOutLet.inputView = datePicker
@@ -655,6 +677,14 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                 message += "UserName is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: userNameOutLet)
             }else{ WhiteBordersForTexts(userNameOutLet)}
+            var searchCharacter: Character = "@"
+            
+            if !userNameOutLet.text!.lowercaseString.characters.contains(searchCharacter) {
+                errors = true
+                message += "That isn't a Email format"
+                alertWithTitle(title, message: message, ViewController: self, toFocus: userNameOutLet)
+            }
+            else {  WhiteBordersForTexts(userNameOutLet) }
             
             if ((PassWordOutlet.text?.characters.count) < 8 ) || ((PassWordOutlet.text?.characters.count) > 15 ){
                 errors = true
@@ -686,6 +716,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                 message += "Birthdate  is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: DatePickerTextOutLet)
             }else{ WhiteBordersForTexts(DatePickerTextOutLet)}
+            
             return errors
     }// CheckFor Error Func
     

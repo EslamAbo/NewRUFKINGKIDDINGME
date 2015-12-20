@@ -272,7 +272,7 @@
                                                     <action selector="MaleOrFemaleThereIsNo3rd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zer-PR-DYb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxN-Xg-55N">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" verticalHuggingPriority="600" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxN-Xg-55N">
                                                 <rect key="frame" x="79" y="0.0" width="79" height="49"/>
                                                 <animations/>
                                                 <constraints>
