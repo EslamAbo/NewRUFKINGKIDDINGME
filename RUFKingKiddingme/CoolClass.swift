@@ -26,8 +26,17 @@ class CoolClass {
                         
                         let data = root.stringValue
                         let jsson = JSON(data)
-                        if data == "\"-1\"" {}
-                        
+                        if data == "\"-1\"" {
+                         print(data  )
+                        }
+                        else if data == "\"-2\"" {
+                            print(data  )
+
+                        }
+                        else    {
+                            print(data  )
+   
+                        }
                         
                         
                         

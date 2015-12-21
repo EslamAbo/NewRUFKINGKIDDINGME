@@ -233,7 +233,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             let path =  "http://213.42.51.219/_mobfiles/CLS_MobAndroid.asmx/\(RuDriverOrPassengerURLKey)?firstName=\(firstName)&lastName=\(LastName)&mobile=\(MobileNum)&username=\(UserName)&password=\(PassWord)&gender=\(Gender)&photoName=\(PhotoName)&licenseScannedFileName=\(LicencesScaned)&TrafficFileNo=\(TrafficFileNum)&BirthDate=\(BirthDate)&NationalityId=\(NatinalityID)&PreferredLanguageId=\(PreferedLanguage)"
             print(path)
             
-            CoolClass().WebServiesSire(path)
+            WebServiesSire(path)
         }
 //        if TextEditCompletion {
         
@@ -743,7 +743,38 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         TextField.layer.borderWidth = 2.0
     }
     
-    
+    func WebServiesSire(WEBPage:String){
+        Alamofire.request(.GET, WEBPage )
+            .responseString { response in
+                do {
+                    let doc = try XMLDocument(string: response.result.value!)
+                    if let root = doc.root {
+                        // this should be the content within the <string></string> element
+                        //                        print(root.stringValue)
+                        
+                        let data = root.stringValue
+                        let jsson = JSON(data)
+                        if data == "\"-1\"" {
+                            print(data  )
+                            self.alertWithTitle("error", message: "Username is taken", ViewController: self, toFocus: self.userNameOutLet)
+                        }
+                        else if data == "\"-2\"" {
+                            print(data  )
+                            self.alertWithTitle("error", message: "Mobilenumber is taken", ViewController: self, toFocus: self.MobileOutLet)
+                        }
+                        else    {
+                            print(data  )
+                            
+                        }
+                        
+                        
+                        
+                    }
+                } catch let error {
+                    print(error)
+                }//catch
+        }//do that is in almanofire
+    }//the WebPageFunc
 }
 extension NSDate {
     var age: Int {
