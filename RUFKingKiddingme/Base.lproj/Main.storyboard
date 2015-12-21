@@ -14,15 +14,15 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="760"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="registerbackgroundtest" translatesAutoresizingMaskIntoConstraints="NO" id="FU2-wE-2dg">
-                                <rect key="frame" x="0.0" y="20" width="600" height="740"/>
+                                <rect key="frame" x="-4" y="20" width="383" height="647"/>
                                 <animations/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CNY-U5-YGv">
-                                <rect key="frame" x="0.0" y="27" width="600" height="733"/>
+                                <rect key="frame" x="-4" y="27" width="383" height="640"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Rj4-Wp-ZiH">
                                         <rect key="frame" x="20" y="51" width="560" height="70"/>
@@ -185,6 +185,9 @@
                                                             <constraint firstAttribute="height" constant="55" id="jsp-qu-BLc"/>
                                                         </constraints>
                                                         <state key="normal" title="Button" image="calicon"/>
+                                                        <connections>
+                                                            <action selector="DatePickeractionButton:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Qtn-ar-14m"/>
+                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date Of Birth" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="BvI-JV-H8g">
                                                         <rect key="frame" x="58" y="13" width="225" height="30"/>
@@ -411,7 +414,8 @@
                                         <exclude reference="rP3-Dt-Rxe"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="27" width="375" height="733"/>
                                     <mask key="subviews">
                                         <include reference="Rj4-Wp-ZiH"/>
                                     </mask>
@@ -479,8 +483,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="760"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="AutoComTable" destination="89d-eH-nw7" id="DMd-5A-hw7"/>
                         <outlet property="DatePickerTextOutLet" destination="BvI-JV-H8g" id="lFq-sC-9Wn"/>
@@ -498,6 +501,7 @@
                         <outlet property="TheSliderNot" destination="wxN-Xg-55N" id="rpx-gb-Ity"/>
                         <outlet property="bothButtonoutLet" destination="xm9-He-s6S" id="6Os-5T-N6T"/>
                         <outlet property="userNameOutLet" destination="7uu-cw-hmm" id="gtp-Oh-Mdo"/>
+                        <segue destination="dqb-kg-X81" kind="show" identifier="lol" id="wqR-bX-Sg9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -513,7 +517,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Rh7-y7-6hZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a6J-r0-zOS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.3037022533" green="1" blue="0.37836574740000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -521,7 +525,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkk-kR-WTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973.5" y="275"/>
+            <point key="canvasLocation" x="1044.75" y="360.5"/>
         </scene>
     </scenes>
     <resources>

@@ -167,14 +167,14 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         // The Auto Compelete Delegates
         DatePickerTextOutLet.delegate = self
         NationalityOutLet.delegate = self
-        AutoComTable!.delegate = self
-        AutoComTable!.dataSource = self
-        AutoComTable!.scrollEnabled = true
-        AutoComTable!.hidden = true
+        AutoComTable.delegate = self
+        AutoComTable.dataSource = self
+        AutoComTable.scrollEnabled = true
+        AutoComTable.hidden = true
         
-        //the hight of the scroll view :
+         //the hight of the scroll view :
         ScrollViewOutlet.contentInset = UIEdgeInsetsMake(0, 0, 730, 0)
-        
+        viewWillAppear(true)
         
         // The picker code  Delegates
        PickerSensei(FirstnameoutLet)
@@ -315,12 +315,12 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         if let tempo1 = cell
         {
             let index = indexPath.row as Int
-            cell!.textLabel!.text = autocompleteUrls[index]
+            cell.textLabel!.text = autocompleteUrls[index]
         } else
         {
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: autoCompleteRowIdentifier)
         }
-        return cell!
+        return cell
     }
     
     
@@ -328,7 +328,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         let selectedCell : UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         //     var currentTextField = textField.text
         NationalityOutLet.text = selectedCell.textLabel!.text
-        AutoComTable!.hidden = true
+        AutoComTable.hidden = true
         
     }
     
@@ -421,7 +421,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     //////// Date Picker
     
     @IBAction func DatePickeractionButton(sender: AnyObject) {
-        
     }
     func textFieldDidBeginEditing(textField: UITextField) {
         datePicker.datePickerMode = UIDatePickerMode.Date
@@ -613,7 +612,12 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
 //  
 //        
 //    }
-    
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+        RedBordersForUITextss(textField)
+        
+        
+    }
     
         func textFieldShouldReturn(textField: UITextField) -> Bool {
             textField.resignFirstResponder()
@@ -651,6 +655,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
         func checkForErrors() -> Bool
         {
+            let searchCharacter: Character = "@"
+            let spaceChr : Character   = " "
             var errors = false
             let title = "Error"
             var message = ""
@@ -671,26 +677,40 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                 message += "Mobile numper is problem :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: MobileOutLet)
             }else{ WhiteBordersForTexts(MobileOutLet)}
+            if  MobileOutLet.text!.lowercaseString.characters.contains(spaceChr) {
+                errors = true
+                message += "sorry but u can't use space between letters"
+                alertWithTitle(title, message: message, ViewController: self, toFocus: MobileOutLet)
+            }
             
             if ((userNameOutLet.text?.characters.count) < 6 ) || ((userNameOutLet.text?.characters.count) > 19){
                 errors = true
                 message += "UserName is empty :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: userNameOutLet)
             }else{ WhiteBordersForTexts(userNameOutLet)}
-            var searchCharacter: Character = "@"
             
-            if !userNameOutLet.text!.lowercaseString.characters.contains(searchCharacter) {
+            if  userNameOutLet.text!.lowercaseString.characters.contains(spaceChr) {
+                errors = true
+                message += "sorry but u can't use space between letters"
+                alertWithTitle(title, message: message, ViewController: self, toFocus: userNameOutLet)
+            }
+            if (!userNameOutLet.text!.lowercaseString.characters.contains(searchCharacter) || !userNameOutLet.text!.hasSuffix(".com")) {
                 errors = true
                 message += "That isn't a Email format"
                 alertWithTitle(title, message: message, ViewController: self, toFocus: userNameOutLet)
-            }
-            else {  WhiteBordersForTexts(userNameOutLet) }
+            } else {  WhiteBordersForTexts(userNameOutLet) }
             
             if ((PassWordOutlet.text?.characters.count) < 8 ) || ((PassWordOutlet.text?.characters.count) > 15 ){
                 errors = true
                 message += "Password must be at least 8 characters , sorry bro  :("
                 alertWithTitle(title, message: message, ViewController: self, toFocus: PassWordOutlet)
             }else{ WhiteBordersForTexts(PassWordOutlet)}
+            
+            if  PassWordOutlet.text!.lowercaseString.characters.contains(spaceChr) {
+                errors = true
+                message += "sorry but u can't use space between letters"
+                alertWithTitle(title, message: message, ViewController: self, toFocus: PassWordOutlet)
+            }
             
             if ((NationalityOutLet.text?.characters.count) < 3 ) || ((NationalityOutLet.text?.characters.count) > 14 ) {
                 errors = true
@@ -736,6 +756,17 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         TextField.layer.borderColor = UIColor( red: 260/255, green: 0/255, blue:0/255, alpha: 1.0 ).CGColor
         TextField.layer.borderWidth = 4.0
     }
+    func RedBordersForUITextss(TextField:UITextField){
+        TextField.delegate = self
+        if ((TextField.text?.characters.count) > 9 || (TextField.text?.characters.count) < 4) {
+            
+            TextField.layer.cornerRadius = 10.0
+            TextField.layer.masksToBounds = true
+            TextField.layer.borderColor = UIColor( red: 260/255, green: 0/255, blue:0/255, alpha: 1.0 ).CGColor
+            TextField.layer.borderWidth = 4.0
+        } else {        TextField.layer.borderColor = UIColor( red: 255/255, green: 255/255, blue:255/255, alpha: 1.0 ).CGColor
+        }
+    }
     func WhiteBordersForTexts(TextField:UITextField){
         TextField.layer.cornerRadius = 10.0
         TextField.layer.masksToBounds = true
@@ -764,6 +795,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                         }
                         else    {
                             print(data  )
+                            self.performSegueWithIdentifier("lol", sender: nil)
+
                             
                         }
                         
