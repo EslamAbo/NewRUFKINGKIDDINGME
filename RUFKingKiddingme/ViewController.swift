@@ -164,6 +164,9 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        navigationController!.navigationBar.barTintColor = UIColor.redColor()
+         
         // The Auto Compelete Delegates
         DatePickerTextOutLet.delegate = self
         NationalityOutLet.delegate = self
@@ -421,6 +424,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     //////// Date Picker
     
     @IBAction func DatePickeractionButton(sender: AnyObject) {
+
     }
     func textFieldDidBeginEditing(textField: UITextField) {
         datePicker.datePickerMode = UIDatePickerMode.Date
@@ -512,30 +516,21 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                                     self.IDGEtter.append(IDGetter as Int)
                                     
                                     //                                self.dic = [ collection[indexx ] as! String : collection[NatIDd] as!Int]
-                                    
                                     //                                    print(self.dic)
                                 }
-                                
-                                
-                                
+  
                             }//for loop
-                            
 //                            print(self.NationalityIDResults)
 //                            print(self.IDGEtter)
-                            
                             //                                    )
                             //                                    let cont : AnyObject? = collection["cont"]
                             
                         }}} catch let error {
                             print(error)
                 }//catch
-                
-                
         }//do that is in almanofire
-        
-        
-        
-    }
+    }// webGetter Func 
+    
     //    func testDic(){
     //    for var index=0;index < self.NationalityIDResults.count; index++ {
     //    let key = self.NationalityIDResults[index];
@@ -795,7 +790,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                         }
                         else    {
                             print(data  )
-                            self.performSegueWithIdentifier("lol", sender: nil)
+                                    self.performSegueWithIdentifier("lol", sender: nil)
+
 
                             
                         }

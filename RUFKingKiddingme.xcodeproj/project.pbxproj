@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		109D96E3E2814C96FB36F97A /* Pods_RUFKingKiddingme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 714BA3F56E51569AD612FCF6 /* Pods_RUFKingKiddingme.framework */; };
+		710620431C2BE3C70015A24B /* VCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710620421C2BE3C70015A24B /* VCCell.swift */; settings = {ASSET_TAGS = (); }; };
+		710620481C2BE8960015A24B /* RidersBeenSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710620471C2BE8960015A24B /* RidersBeenSelected.swift */; settings = {ASSET_TAGS = (); }; };
 		71AB0E351C1151BD009AD522 /* CoolClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB0E341C1151BD009AD522 /* CoolClass.swift */; settings = {ASSET_TAGS = (); }; };
 		71CA5AFA1C1B6D64004BABB2 /* calicon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71CA5AF91C1B6D64004BABB2 /* calicon.jpg */; settings = {ASSET_TAGS = (); }; };
 		71E79C291C108D12004D3B21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E79C281C108D12004D3B21 /* AppDelegate.swift */; };
@@ -17,6 +19,9 @@
 		71E79C331C108D12004D3B21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71E79C311C108D12004D3B21 /* LaunchScreen.storyboard */; };
 		71E79C4C1C108EFB004D3B21 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E79C4B1C108EFB004D3B21 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		71EFFB8A1C1818CE006E2AA5 /* Save in Resources */ = {isa = PBXBuildFile; fileRef = 71EFFB891C1818CE006E2AA5 /* Save */; settings = {ASSET_TAGS = (); }; };
+		71F3B2A71C28F06D0021C57E /* MostRiders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3B2A61C28F06D0021C57E /* MostRiders.swift */; settings = {ASSET_TAGS = (); }; };
+		71F3B2A91C28F0800021C57E /* MostRiderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3B2A81C28F0800021C57E /* MostRiderCell.swift */; settings = {ASSET_TAGS = (); }; };
+		71F3B2AB1C28F6620021C57E /* MostRidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3B2AA1C28F6620021C57E /* MostRidesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		710620421C2BE3C70015A24B /* VCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCCell.swift; sourceTree = "<group>"; };
+		710620471C2BE8960015A24B /* RidersBeenSelected.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidersBeenSelected.swift; sourceTree = "<group>"; };
 		714BA3F56E51569AD612FCF6 /* Pods_RUFKingKiddingme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RUFKingKiddingme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71AB0E341C1151BD009AD522 /* CoolClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoolClass.swift; sourceTree = "<group>"; };
 		71CA5AF91C1B6D64004BABB2 /* calicon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = calicon.jpg; sourceTree = "<group>"; };
@@ -71,6 +78,9 @@
 		71E79C3A1C108E8C004D3B21 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		71E79C4B1C108EFB004D3B21 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		71EFFB891C1818CE006E2AA5 /* Save */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Save; sourceTree = "<group>"; };
+		71F3B2A61C28F06D0021C57E /* MostRiders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostRiders.swift; sourceTree = "<group>"; };
+		71F3B2A81C28F0800021C57E /* MostRiderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostRiderCell.swift; sourceTree = "<group>"; };
+		71F3B2AA1C28F6620021C57E /* MostRidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostRidesViewController.swift; sourceTree = "<group>"; };
 		C15D1881D401E228D68DEC47 /* Pods-RUFKingKiddingme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RUFKingKiddingme.release.xcconfig"; path = "Pods/Target Support Files/Pods-RUFKingKiddingme/Pods-RUFKingKiddingme.release.xcconfig"; sourceTree = "<group>"; };
 		FB719301E8E0A96DBF6D1664 /* Pods-RUFKingKiddingme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RUFKingKiddingme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RUFKingKiddingme/Pods-RUFKingKiddingme.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,10 +120,10 @@
 			isa = PBXGroup;
 			children = (
 				71E79C281C108D12004D3B21 /* AppDelegate.swift */,
-				71E79C2A1C108D12004D3B21 /* ViewController.swift */,
-				71AB0E341C1151BD009AD522 /* CoolClass.swift */,
 				71EFFB891C1818CE006E2AA5 /* Save */,
+				71F3B2AD1C28F6A20021C57E /* Registration */,
 				71E79C4B1C108EFB004D3B21 /* SwiftyJSON.swift */,
+				71F3B2AC1C28F6880021C57E /* MostRides */,
 				71E79C2C1C108D12004D3B21 /* Main.storyboard */,
 				71E79C2F1C108D12004D3B21 /* Assets.xcassets */,
 				71CA5AF91C1B6D64004BABB2 /* calicon.jpg */,
@@ -132,6 +142,27 @@
 				71E79C481C108E8D004D3B21 /* Alamofire.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		71F3B2AC1C28F6880021C57E /* MostRides */ = {
+			isa = PBXGroup;
+			children = (
+				71F3B2AA1C28F6620021C57E /* MostRidesViewController.swift */,
+				710620421C2BE3C70015A24B /* VCCell.swift */,
+				710620471C2BE8960015A24B /* RidersBeenSelected.swift */,
+				71F3B2A61C28F06D0021C57E /* MostRiders.swift */,
+				71F3B2A81C28F0800021C57E /* MostRiderCell.swift */,
+			);
+			name = MostRides;
+			sourceTree = "<group>";
+		};
+		71F3B2AD1C28F6A20021C57E /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				71E79C2A1C108D12004D3B21 /* ViewController.swift */,
+				71AB0E341C1151BD009AD522 /* CoolClass.swift */,
+			);
+			name = Registration;
 			sourceTree = "<group>";
 		};
 		AE5901F21893D6F23B714794 /* Pods */ = {
@@ -312,8 +343,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710620431C2BE3C70015A24B /* VCCell.swift in Sources */,
+				71F3B2AB1C28F6620021C57E /* MostRidesViewController.swift in Sources */,
+				710620481C2BE8960015A24B /* RidersBeenSelected.swift in Sources */,
 				71E79C4C1C108EFB004D3B21 /* SwiftyJSON.swift in Sources */,
+				71F3B2A71C28F06D0021C57E /* MostRiders.swift in Sources */,
 				71AB0E351C1151BD009AD522 /* CoolClass.swift in Sources */,
+				71F3B2A91C28F0800021C57E /* MostRiderCell.swift in Sources */,
 				71E79C2B1C108D12004D3B21 /* ViewController.swift in Sources */,
 				71E79C291C108D12004D3B21 /* AppDelegate.swift in Sources */,
 			);
