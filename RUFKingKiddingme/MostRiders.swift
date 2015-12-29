@@ -16,17 +16,17 @@ class MostRiders: UITableViewController     {
     
     @IBOutlet weak var ActivityC: UIActivityIndicatorView!
     @IBOutlet var TABLEVIEW: UITableView!
-    var TitleList = [String]()
-    var DesList =  [String]()
-    var FromReg = [String]()
-    var ToEmi = [String]()
-    var Numberof = [String]()
+    var TitleList = ["Dubai","El tahoyna","El Geza","Shobraa"]
+    var DesList =  ["Dubai1","El tahoyna1","El Geza1","Shobraa1"]
+    var FromReg = ["Dubai2","El tahoyna2","El Geza2","Shobraa2"]
+    var ToEmi = ["Dubai3","El tahoyna3","El Geza3","Shobraa3"]
+    var Numberof = ["23","43","123","544"]
     
     override func viewDidLoad() {
           ActivityC.startAnimating()
         super.viewDidLoad()
 
-        navigationController!.navigationBar.barTintColor = UIColor.redColor()
+//        navigationController!.navigationBar.barTintColor = UIColor.redColor()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,59 +35,59 @@ class MostRiders: UITableViewController     {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
          TABLEVIEW.delegate = self
         TABLEVIEW.dataSource = self
-        Alamofire.request(.GET, "http://213.42.51.219/_mobfiles/CLS_MobAndroid.asmx/GetAllMostDesiredRides" )
-            .responseString { response in
-                do {
-                    let doc = try XMLDocument(string: response.result.value!)
-                    if let root = doc.root {
-                        // this should be the content within the <string></string> element
-                        //                        print(root.stringValue)
-                        
-                        let dasta = root.stringValue
-                        
-                        var allContacts: AnyObject!
-                        
-                        let testdata = dasta.dataUsingEncoding(NSUTF8StringEncoding)
-                        
-                        let allContactsData=NSData(data: testdata!)
-                        do {
-                            allContacts = try NSJSONSerialization.JSONObjectWithData(allContactsData,options: [])
-                        }catch let error as NSError {  print(error)  }
-                        if let json = allContacts as? Array<AnyObject> {
-                            for index in 0...json.count-1 {
-                                let contact : AnyObject? = json[index]
-                                let collection = contact! as! Dictionary<String, AnyObject>
-                                
-                                
-                                let LGetter  = collection["FromEmirateNameEn"]
-                                self.TitleList.append(LGetter as! String)
-                                let LIDGetter = collection["ToRegionNameEn"]
-                                self.DesList.append(LIDGetter as! String)
-                                let NumberOfdriver = collection["NoOfRoutes"]
-                                self.Numberof.append (String(NumberOfdriver as! Int))
-                                let FromRegion = collection["FromRegionNameEn"]
-                                 self.FromReg.append(FromRegion as! String)
-                                let ToRegion = collection["ToEmirateNameEn"]
-                                 self.ToEmi.append(ToRegion as! String)
-                                
-
-                                //                                self.dic = [ collection[indexx ] as! String : collection[NatIDd] as!Int]
-                                //                                    print(self.dic)
-                                
-                            }//for loop
-                            //                            print(self.NationalityIDResults)
-                            //                            print(self.IDGEtter)
-                            //                                    )
-                            //                                    let cont : AnyObject? = collection["cont"]
-                            print(self.TitleList)
-                            print(self.DesList)
-                            self.TABLEVIEW.reloadData()
-                        }}} catch let error {
-                            print(error)
-                }//catch
-                self.ActivityC.hidden = true
-                self.ActivityC.stopAnimating()
-        }//do that is in almanofire
+//        Alamofire.request(.GET, "http://213.42.51.219/_mobfiles/CLS_MobAndroid.asmx/GetAllMostDesiredRides" )
+//            .responseString { response in
+//                do {
+//                    let doc = try XMLDocument(string: response.result.value!)
+//                    if let root = doc.root {
+//                        // this should be the content within the <string></string> element
+//                        //                        print(root.stringValue)
+//                        
+//                        let dasta = root.stringValue
+//                        
+//                        var allContacts: AnyObject!
+//                        
+//                        let testdata = dasta.dataUsingEncoding(NSUTF8StringEncoding)
+//                        
+//                        let allContactsData=NSData(data: testdata!)
+//                        do {
+//                            allContacts = try NSJSONSerialization.JSONObjectWithData(allContactsData,options: [])
+//                        }catch let error as NSError {  print(error)  }
+//                        if let json = allContacts as? Array<AnyObject> {
+//                            for index in 0...json.count-1 {
+//                                let contact : AnyObject? = json[index]
+//                                let collection = contact! as! Dictionary<String, AnyObject>
+//                                
+//                                
+//                                let LGetter  = collection["FromEmirateNameEn"]
+//                                self.TitleList.append(LGetter as! String)
+//                                let LIDGetter = collection["ToRegionNameEn"]
+//                                self.DesList.append(LIDGetter as! String)
+//                                let NumberOfdriver = collection["NoOfRoutes"]
+//                                self.Numberof.append (String(NumberOfdriver as! Int))
+//                                let FromRegion = collection["FromRegionNameEn"]
+//                                 self.FromReg.append(FromRegion as! String)
+//                                let ToRegion = collection["ToEmirateNameEn"]
+//                                 self.ToEmi.append(ToRegion as! String)
+//                                
+//
+//                                //                                self.dic = [ collection[indexx ] as! String : collection[NatIDd] as!Int]
+//                                //                                    print(self.dic)
+//                                
+//                            }//for loop
+//                            //                            print(self.NationalityIDResults)
+//                            //                            print(self.IDGEtter)
+//                            //                                    )
+//                            //                                    let cont : AnyObject? = collection["cont"]
+//                            print(self.TitleList)
+//                            print(self.DesList)
+//                            self.TABLEVIEW.reloadData()
+//                        }}} catch let error {
+//                            print(error)
+//                }//catch
+//                self.ActivityC.hidden = true
+//                self.ActivityC.stopAnimating()
+//        }//do that is in almanofire
     }
 
     override func didReceiveMemoryWarning() {

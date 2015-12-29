@@ -19,6 +19,7 @@ class MostRidesViewController: UIViewController , UITableViewDelegate, UITableVi
     var StartingTimes = ["1","2","3","4"]
     var rate = ["5","6","7","8"]
     var ContactName = [ "Mean Snake","Mohamed Arafa","Hema El 3ashe2","Nezar matsha3'rnash"]
+    var ImageSet = ["Fotor_14323060802767.jpg","Fotor_143230595276267.jpg","Fotor_143230622191292.jpg","frbackgroundtwo.jpg"]
     @IBOutlet weak var TableView2: UITableView!
     @IBOutlet weak var FromEmirat: UILabel!
     @IBOutlet weak var FromREgion: UILabel!
@@ -33,8 +34,8 @@ class MostRidesViewController: UIViewController , UITableViewDelegate, UITableVi
         
         TableView2.delegate = self
         TableView2.dataSource = self
-        navigationController!.navigationBar.barTintColor = UIColor.redColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+//        navigationController!.navigationBar.barTintColor = UIColor.redColor()
+//        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         FromEmirat.text = FromEmiraVar
         FromREgion.text = FromRegVar
@@ -76,13 +77,14 @@ class MostRidesViewController: UIViewController , UITableViewDelegate, UITableVi
         cell.StartingTime.text = StartingTimes[indexPath.row]
         cell.ContactName.text = ContactName[indexPath.row]
         cell.RatingOutlet.text = rate[indexPath.row]
-//        var image = cell.ContactImageViaCell
-//        
+        var image = cell.ContactImageViaCell
+////
 //        image.layer.cornerRadius = image.frame.size.height/2
 //        image.clipsToBounds = true
-//        
-        
-        
+//
+        image.image = UIImage(named: ImageSet[indexPath.row])
+        image.layer.cornerRadius = 35.0
+        image.layer.masksToBounds = true
         
         return cell
     }
@@ -91,26 +93,31 @@ class MostRidesViewController: UIViewController , UITableViewDelegate, UITableVi
     {
         
     }
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//        
-//        if ( segue.identifier == "DetailsView2"){
-//            
-//            let VC = segue.destinationViewController as! RidersBeenSelected
-//            if let indexpath = self.TableView2.indexPathForSelectedRow  {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if ( segue.identifier == "DetailsView2"){
+            
+            let VC = segue.destinationViewController as! RidersBeenSelected
+            if let indexpath = self.TableView2.indexPathForSelectedRow  {
+                
+                
+                VC.STARTINGTIME = StartingTimes[indexpath.row]
+                VC.RiderName =  ContactName[indexpath.row]
+                VC.Rate = rate[indexpath.row]
+                
+//                let TitleFrom = TitleList[indexpath.row] as! String
+//                VC.FromEmiraVar  = TitleFrom
 //                
-////                let TitleFrom = TitleList[indexpath.row] as! String
-////                VC.FromEmiraVar  = TitleFrom
-////                
-////                let TitleTo = DesList[indexpath.row] as! String
-////                VC.ToEmiraVar = TitleTo
-////                let fromRegion = FromReg[indexpath.row] as! String
-////                VC.FromRegVar = fromRegion
-////                let ToEmiratee = ToEmi[indexpath.row] as! String
-////                VC.ToRegVar = ToEmiratee
-//            }
-//        }
-//    }
+//                let TitleTo = DesList[indexpath.row] as! String
+//                VC.ToEmiraVar = TitleTo
+//                let fromRegion = FromReg[indexpath.row] as! String
+//                VC.FromRegVar = fromRegion
+//                let ToEmiratee = ToEmi[indexpath.row] as! String
+//                VC.ToRegVar = ToEmiratee
+            }
+        }
+    }
 
 }

@@ -22,6 +22,7 @@
 		71F3B2A71C28F06D0021C57E /* MostRiders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3B2A61C28F06D0021C57E /* MostRiders.swift */; settings = {ASSET_TAGS = (); }; };
 		71F3B2A91C28F0800021C57E /* MostRiderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3B2A81C28F0800021C57E /* MostRiderCell.swift */; settings = {ASSET_TAGS = (); }; };
 		71F3B2AB1C28F6620021C57E /* MostRidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F3B2AA1C28F6620021C57E /* MostRidesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		71F5DD5F1C2D657F00AC4D62 /* TheMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F5DD5E1C2D657F00AC4D62 /* TheMainViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		71F3B2A61C28F06D0021C57E /* MostRiders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostRiders.swift; sourceTree = "<group>"; };
 		71F3B2A81C28F0800021C57E /* MostRiderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostRiderCell.swift; sourceTree = "<group>"; };
 		71F3B2AA1C28F6620021C57E /* MostRidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostRidesViewController.swift; sourceTree = "<group>"; };
+		71F5DD5E1C2D657F00AC4D62 /* TheMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheMainViewController.swift; sourceTree = "<group>"; };
 		C15D1881D401E228D68DEC47 /* Pods-RUFKingKiddingme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RUFKingKiddingme.release.xcconfig"; path = "Pods/Target Support Files/Pods-RUFKingKiddingme/Pods-RUFKingKiddingme.release.xcconfig"; sourceTree = "<group>"; };
 		FB719301E8E0A96DBF6D1664 /* Pods-RUFKingKiddingme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RUFKingKiddingme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RUFKingKiddingme/Pods-RUFKingKiddingme.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				71E79C281C108D12004D3B21 /* AppDelegate.swift */,
+				71F5DD5E1C2D657F00AC4D62 /* TheMainViewController.swift */,
 				71EFFB891C1818CE006E2AA5 /* Save */,
 				71F3B2AD1C28F6A20021C57E /* Registration */,
 				71E79C4B1C108EFB004D3B21 /* SwiftyJSON.swift */,
@@ -344,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				710620431C2BE3C70015A24B /* VCCell.swift in Sources */,
+				71F5DD5F1C2D657F00AC4D62 /* TheMainViewController.swift in Sources */,
 				71F3B2AB1C28F6620021C57E /* MostRidesViewController.swift in Sources */,
 				710620481C2BE8960015A24B /* RidersBeenSelected.swift in Sources */,
 				71E79C4C1C108EFB004D3B21 /* SwiftyJSON.swift in Sources */,

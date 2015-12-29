@@ -1,39 +1,22 @@
 //
-//  RidersBeenSelected.swift
+//  TheMainViewController.swift
 //  RUFKingKiddingme
 //
-//  Created by killvak on 12/24/15.
+//  Created by killvak on 12/25/15.
 //  Copyright © 2015 killvak. All rights reserved.
 //
 
 import UIKit
 
-class RidersBeenSelected: UIViewController {
-    
-    var RiderName : String = ""
-    var Rate : String = ""
-    var days : String = ""
-    var STARTINGTIME :String = ""
-    var ImageOfRider : UIImage?
-    
-    @IBOutlet weak var StartingTime: UILabel!
-    
-    @IBOutlet weak var RiderNameOutLet: UILabel!
-    @IBOutlet weak var ImageOutLet: UIImageView!
+class TheMainViewController: UIViewController {
 
-    @IBOutlet weak var RateOutLet: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController!.navigationBar.barTintColor = UIColor(hue: 0, saturation: 0, brightness: 0, alpha: 0)
+
 
         // Do any additional setup after loading the view.
-        ImageOutLet.layer.cornerRadius = 35.0
-        ImageOutLet.layer.masksToBounds = true
-        
-        RiderNameOutLet.text = RiderName
-        StartingTime.text = STARTINGTIME
-        RateOutLet.text = Rate
-        
-    
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +24,14 @@ class RidersBeenSelected: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func theMostRiders(sender: AnyObject) {
+ 
+        
+    }
+ 
+    @IBAction func RegistrationButton(sender: AnyObject) {
+ 
+    }
     /*
     // MARK: - Navigation
 
